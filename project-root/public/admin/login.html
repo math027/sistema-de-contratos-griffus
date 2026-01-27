@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Griffus Style</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .login-logo { max-width: 150px; margin-bottom: 20px; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="../img/logo.webp" alt="Logo" class="login-logo">
+        <h3 style="margin-bottom: 20px; color: var(--griffus-pink);">Acesso Administrativo</h3>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="adminUser">Usuário</label>
+                <input type="text" id="adminUser" name="user" required>
+            </div>
+            <div class="form-group">
+                <label for="adminPass">Senha</label>
+                <input type="password" id="adminPass" name="pass" required>
+            </div>
+            <div class="button-container" style="justify-content: center;">
+                <button type="submit" style="width: 100%;">Entrar</button>
+            </div>
+        </form>
+    </div>
+    <script src="../js/admin-login.js"></script>
+</body>
+</html>
