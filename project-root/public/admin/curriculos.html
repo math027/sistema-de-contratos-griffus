@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contratos - Painel Administrativo</title>
+    <title>Currículos - Painel Administrativo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -27,8 +27,8 @@
                 <li><a href="#" class="nav-link"><i class="fa-solid fa-chart-pie"></i> <span class="link-text">Dashboard</span></a></li>
                 
                 <div class="nav-category">Administrativo</div>
-                <li><a href="contratos.html" class="nav-link active"><i class="fa-solid fa-file-contract"></i> <span class="link-text">Contratos</span></a></li>
-                <li><a href="curriculos.html" class="nav-link"><i class="fa-solid fa-address-card"></i> <span class="link-text">Currículos</span></a></li>
+                <li><a href="contratos.html" class="nav-link"><i class="fa-solid fa-file-contract"></i> <span class="link-text">Contratos</span></a></li>
+                <li><a href="curriculos.html" class="nav-link active"><i class="fa-solid fa-address-card"></i> <span class="link-text">Currículos</span></a></li>
                 
                 <div class="nav-category">Gestão</div>
                 <li><a href="#" class="nav-link"><i class="fa-solid fa-gear"></i> <span class="link-text">Configurações</span></a></li>
@@ -40,8 +40,11 @@
     </aside>
     <main class="main-content">
         <header>
-            <h1>Gestão de Contratos</h1>
-            <button class="btn-action" style="background: #000; color: #fff;">+ Novo Contrato</button>
+            <h1>Banco de Currículos</h1>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" placeholder="Buscar candidato..." style="padding: 8px; border: 1px solid #ddd; outline: none;">
+                <button class="btn-action" style="background: #000; color: #fff;">Filtrar</button>
+            </div>
         </header>
 
         <div class="card">
@@ -49,45 +52,43 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Cliente</th>
-                            <th>Tipo de Serviço</th>
-                            <th>Data Início</th>
-                            <th>Status</th>
+                            <th>Nome</th>
+                            <th>Vaga Pretendida</th>
+                            <th>Experiência</th>
+                            <th>Data Envio</th>
+                            <th>Anexo</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>#CON-202401</td>
-                            <td>Empresa Alpha Ltda</td>
-                            <td>Consultoria de Vendas</td>
-                            <td>15/01/2026</td>
-                            <td><span class="status-badge status-active">Ativo</span></td>
+                            <td>João da Silva</td>
+                            <td>Promotor de Vendas</td>
+                            <td>3 anos</td>
+                            <td>28/01/2026</td>
+                            <td><i class="fa-solid fa-file-pdf" style="color: #d32f2f;"></i> cv_joao.pdf</td>
                             <td>
-                                <a href="#" class="btn-action"><i class="fa-solid fa-eye"></i></a>
-                                <a href="#" class="btn-action"><i class="fa-solid fa-download"></i></a>
+                                <button class="btn-action">Agendar Entrevista</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#CON-202402</td>
-                            <td>Moda & Estilo S.A.</td>
-                            <td>Trade Marketing</td>
-                            <td>20/01/2026</td>
-                            <td><span class="status-badge status-pending">Pendente</span></td>
+                            <td>Maria Oliveira</td>
+                            <td>Gerente de Loja</td>
+                            <td>5 anos</td>
+                            <td>27/01/2026</td>
+                            <td><i class="fa-solid fa-file-pdf" style="color: #d32f2f;"></i> cv_maria.pdf</td>
                             <td>
-                                <a href="#" class="btn-action"><i class="fa-solid fa-eye"></i></a>
-                                <a href="#" class="btn-action"><i class="fa-solid fa-pen"></i></a>
+                                <button class="btn-action">Agendar Entrevista</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>#CON-202389</td>
-                            <td>Varejo Center</td>
-                            <td>Auditoria</td>
-                            <td>10/11/2025</td>
-                            <td><span class="status-badge status-inactive">Encerrado</span></td>
+                            <td>Carlos Souza</td>
+                            <td>Estoquista</td>
+                            <td>1 ano</td>
+                            <td>25/01/2026</td>
+                            <td><i class="fa-solid fa-file-word" style="color: #1976d2;"></i> cv_carlos.docx</td>
                             <td>
-                                <a href="#" class="btn-action"><i class="fa-solid fa-eye"></i></a>
+                                <button class="btn-action">Arquivar</button>
                             </td>
                         </tr>
                     </tbody>
