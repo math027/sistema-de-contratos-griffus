@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início - Griffus Style</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Estilos específicos para a Home, herdando variáveis do main.css */
+        /* Estilos gerais */
         body.home-body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
+            height: 100vh; /* Altura total da tela */
+            overflow: hidden;
             padding: 0;
-            background-color: var(--griffus-bg-light);
+            margin: 0;
+            background-color: #ffffff;
+            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.03) 1.5px, transparent 1.5px);
+            background-size: 35px 35px;
         }
 
         .top-bar {
+            flex-shrink: 0;
             width: 100%;
             display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            z-index: 10;
+        }
+
+        .nav-logo {
+            height: 45px;
+            width: auto;
         }
 
         .login-btn {
@@ -41,63 +53,130 @@
             color: white;
         }
 
+        /* --- Container dos Cards --- */
         .home-content {
-            flex: 1;
+            flex: 1; /* Ocupa todo o espaço vertical restante abaixo da navbar */
+            width: 100%;
+            display: flex;
+            flex-direction: row; /* Alinha lado a lado */
+            padding: 20px; /* Margem externa */
+            gap: 15px; /* Espaçamento solicitado de 15px */
+            box-sizing: border-box;
+        }
+
+        /* --- Estilo Base para os 3 Cards --- */
+        .card-column {
+            flex: 1; /* Faz os 3 ocuparem a largura total igualmente */
+            height: 100%; /* Força altura total */
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            gap: 40px;
-            margin-top: -60px; /* Leve ajuste visual */
-        }
-
-        .home-logo {
-            max-width: 300px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-        }
-
-        .contracts-card {
-            background-color: white;
-            width: 280px;
-            height: 150px;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            border: 1px solid var(--griffus-border-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
         }
 
-        .contracts-card:hover {
+        .card-column:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(233, 30, 99, 0.2);
-            border-color: var(--griffus-pink);
         }
 
-        .contracts-card h2 {
-            color: var(--griffus-text-dark);
-            font-size: 1.5rem;
-            font-weight: 600;
+        /* --- Card Central (Contratos) --- */
+        .card-highlight {
+            background: linear-gradient(180deg, #4a0e68 0%, #b93478 100%); 
+            color: white;
+            box-shadow: 0 20px 40px rgba(74, 14, 104, 0.25);
+            z-index: 2; /* Leve destaque sobre os outros se houver sobreposição */
+        }
+
+        .card-highlight .action-btn {
+            background-color: #66bb6a;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-highlight h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* --- Cards Laterais (Secundários) --- */
+        .card-secondary {
+            /* Cor um pouco mais escura que o fundo branco (#ffffff) */
+            background-color: #f2f2f5; 
+            border: 1px solid #e6e6e6;
+            color: var(--griffus-text-dark); /* Cor escura padrão */
+        }
+
+        .card-secondary:hover {
+            background-color: #e8e8eb; /* Escurece um pouco no hover */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-secondary h2 {
+            font-size: 1.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-secondary p {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        /* Responsividade para telas menores (Tablets/Celulares) */
+        @media (max-width: 900px) {
+            .home-content {
+                flex-direction: column; /* Empilha verticalmente em telas pequenas */
+                height: auto; /* Altura automática para caber o scroll */
+            }
+            .card-column {
+                width: 100%;
+                min-height: 300px; /* Altura mínima quando empilhado */
+            }
+            body.home-body {
+                height: auto;
+                overflow-y: auto;
+            }
         }
     </style>
 </head>
 <body class="home-body">
 
     <div class="top-bar">
+        <img src="img/logo-roxo.png" alt="Griffus Style" class="nav-logo">
         <a href="admin/login.html" class="login-btn">Login Admin</a>
     </div>
 
     <div class="home-content">
-        <img src="img/logo-roxo.png" alt="Griffus Style" class="home-logo">
-
-        <a href="contracts/index.html" class="contracts-card">
-            <div>
-                <h2>Contratos</h2>
-            </div>
+        
+        <a href="#" class="card-column card-secondary">
+            <h2>Novidades</h2>
+            <p>Confira os lançamentos</p>
         </a>
+
+        <a href="contracts/index.html" class="card-column card-highlight">
+            <h1>Contratos</h1>
+            <p>Gerencie seus documentos</p>
+            <span class="action-btn">Acessar</span>
+        </a>
+
+        <a href="#" class="card-column card-secondary">
+            <h2>Suporte</h2>
+            <p>Precisa de ajuda?</p>
+        </a>
+
     </div>
 
     <script src="js/index.js"></script>
